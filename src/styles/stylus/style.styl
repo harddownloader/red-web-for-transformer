@@ -1,0 +1,394 @@
+@import vars
+
+// html
+//   height 100%
+
+// body 
+//   font-family: 'Calibri'
+//   background-color: #fff
+//   margin: 0
+//   height 100%
+
+// body
+//   -webkit-tap-highlight-color rgba(0, 0, 0, 0)
+//   font-family Open Sans, sans-serif
+//   touch-action none
+//   user-select none
+//   -webkit-user-drag none
+//   *
+//     box-sizing border-box
+//     -webkit-tap-highlight-color transparent !important
+//   *:focus
+//     outline none !important
+//   &.noscroll
+//     height 100%
+//     overflow hidden
+//   &::-webkit-scrollbar
+//     width 15px
+//   &::-webkit-scrollbar-track
+//     background transparent
+//   &::-webkit-scrollbar-thumb
+//     background-color rgba(0, 0, 0, 0.15)
+//     border-radius 4px
+
+// a
+//   text-decoration none
+
+// html, body, #master-container
+//   padding 0
+//   margin 0
+//   width 100%
+//   max-width 100%
+//   min-width 100%
+//   position relative
+//   z-index 0
+
+#master-container
+  padding 0
+  margin 0
+  width 100%
+  max-width 100%
+  min-width 100%
+  position relative
+  z-index 0
+
+#master-container
+  overflow-x hidden
+  position relative
+  z-index 0
+  &.noscroll
+    padding 0 15px 0 0!important
+
+.bg-shape
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+  background-size cover
+  z-index -1
+  pointer-events none
+  &:nth-child(1)
+    background-color #F3F9FE
+    clip-path polygon(0% 27%, 8% 20%, 37% 60%, 20% 100%, 0% 100%)
+    -webkit-clip-path polygon(0% 27%, 8% 20%, 37% 60%, 20% 100%, 0% 100%)
+  &:nth-child(2)
+    background-color #EAF5FF
+    clip-path polygon(0% 27%, 8% 20%, 0% 9%)
+    -webkit-clip-path polygon(0% 27%, 8% 20%, 0% 9%)
+
+#chat-box
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 100%
+  transition opacity 0.3s linear
+  z-index 1
+  pointer-events auto
+  opacity 1
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+
+
+#chat-box-content
+  position relative
+  width 100%
+  height 100%
+  display flex
+  align-items center
+  justify-content center
+
+#chat-box-bg
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+  pointer-events none
+  opacity 0.5
+
+#chat-ui-bg
+  transition: all 0.5s;
+  width 1073px
+  height 760px
+  border-radius 20px;
+  background: #fff
+  background-position top center
+  background-size cover
+  background-repeat no-repeat
+  z-index 1
+  display flex
+  flex-direction row
+  align-items center
+  justify-content center
+
+#chat-ui-wrap
+  margin-top: 3%;
+  margin-bottom: 6%;
+  margin-left: 2%;
+  margin-right: 2%;
+  position: relative;
+  width: 96%;
+  height: 86%;
+  border: 3px solid secondGray;
+  border-radius: 4px;
+
+#chat-ui-top-padding-line
+  width: 100%;
+  height: 4%;
+  display: block;
+  background: mainGrayColor
+
+#chat-ui
+  position relative
+  margin: 0px;
+  width: 100%;
+  height: 96%;
+  display flex
+  flex-direction row
+  background-color #fff
+  font-family 'Roboto', sans-serif
+  font-size 15px
+  line-height 20px
+  font-weight 400
+  color #000
+  overflow hidden
+  box-shadow: none;
+  border-radius: 1px 1px 4px 4px;
+
+#chat-ui-sidebar
+  width 34%
+  height 100%
+  display flex
+  flex-direction column
+  justify-content flex-start
+  border-right 1px solid #ddd;
+  background-image: url('../../assets/img/sidebarWithSelectedDialog.jpg');
+  background-size: 100% 100%;
+
+#chat-ui-main
+  width 66%
+  height 100%
+  display flex
+  flex-direction column
+  justify-content flex-start
+  border: 1px solid secondGray;
+  border-right: none;
+  border-bottom: none;
+
+#chat-ui-header
+  width 100%
+  height 3.5em
+  min-height 3.5em
+  display flex
+  background-color #fff
+  padding 0 1em
+  align-items: center;
+  border-bottom: 1px solid secondGray;
+
+#chat-ui-header-logo-and-text
+  width 40%
+  display: flex
+
+#chat-ui-header-logo
+  display: flex;
+  align-items: center;
+  #chat-ui-header-logo__item
+    span
+      background-color: #b70000;
+      display: block;
+      height: 30px;
+      width: 30px;
+      line-height: 30px;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      color: white;
+      text-align: center;
+
+#chat-ui-header-text
+  margin-left: 10px
+
+#chat-ui-header-icons
+  width: 60%
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  .chat-ui-header-icons__item
+    margin: 0px 5px
+    .header-icon-item
+      width 20px
+      height 20px
+      &.bg-search
+        width: 20px; height: 21px;
+        background: url('../../assets/img/icons/transparent/css_sprites_20px.png') -10px -10px;;
+      &.bg-phone
+        width: 20px; height: 20px;
+        background: url('../../assets/img/icons/transparent/css_sprites_20px.png') -10px -51px;
+      &.bg-camera
+        width: 20px; height: 14px;
+        background: url('../../assets/img/icons/transparent/css_sprites_20px.png') -10px -91px;
+      &.bg-logout
+        width: 20px; height: 16px;
+        background: url('../../assets/img/icons/transparent/css_sprites_20px.png') -90px -51px;
+      &.bg-archive
+        width: 20px; height: 17px;
+        background: url('../../assets/img/icons/transparent/css_sprites_20px.png') -50px -51px;
+      &.bg-more
+        width: 20px; height: 4px;
+        background: url('../../assets/img/icons/transparent/css_sprites_20px.png') -90px -91px;
+
+#chat-ui-header-name-contact
+  color: #000000
+  font-size: 1em
+
+#chat-ui-header-theme
+  color: darken(mainGrayColor, 30)
+  font-size: 0.8em;
+
+.chat-wrap
+  position relative
+  overflow-x hidden
+  overflow-y scroll
+  pointer-events auto
+  -webkit-overflow-scrolling touch
+  flex-grow 1
+  width 100%
+  background-color: easyBlue
+  border-top 1px solid #ddd
+  &::-webkit-scrollbar
+    width 5px
+  &::-webkit-scrollbar-track
+    background transparent
+  &::-webkit-scrollbar-thumb
+    background-color rgba(0, 0, 0, 0.15)
+    border-radius 2px
+  img
+    width 100%
+    height auto
+    object-fit contain
+    object-position center
+
+#chat-ui-input
+  color #aaa
+  width 100%
+  height 3em
+  min-height 3em
+  display flex
+  flex-direction row
+  justify-content space-around
+  align-items center
+  align-content: center
+  padding 0 1em
+  background-color: easyBlue
+  .input-element
+    .input-element-item
+      //
+
+// для позиционирования чата
+.chatSend
+  width 85%
+
+body .chatContent 
+  height: 100%
+  overflow-y: auto
+  .ScrollToBottom
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    .ScrollToBottom__img  
+      //
+
+body .chatContent::-webkit-scrollbar 
+  width: 3px
+
+body .chatContent::-webkit-scrollbar-track 
+  background: #fafafa
+
+body .chatContent::-webkit-scrollbar-thumb 
+  background: #3699f6
+
+body .chatContent::-webkit-scrollbar-thumb:hover 
+  background: #3699f6
+
+.chatContent .chat-column 
+  display: flex
+  margin-bottom: 8px
+  padding: 0px
+  margin-left: -15px
+  margin-right: -5px
+
+.chatContent .chat-column > .item > .chat-icon 
+  width: 25px
+  height: 25px
+  line-height: 25px
+  border-radius: 50%
+  text-align: center
+  font-size: 12px
+  color: #fff
+  font-weight: 600
+  margin-right: 10px
+  margin-top: 5px
+
+.chatContent .chat-column > .item > .chat-message 
+  color: #000
+  font-size: 14px
+  padding: 10px 15px
+  border-radius: 10px
+  line-height: 20px
+  span.blueText
+    color: #2196F3;
+  span.boldText
+    font-weight: bold
+
+body .chatContent .company.chat-column > .item > .chat-message 
+  border-radius: 20px 3px 20px 20px
+  background-color: #f5f5f5
+
+
+.chatContent .customer.chat-column > .item > .chat-message
+  border-radius: 3px 20px 20px 20px
+  background-color: lighten(PinkColor, 70%) 
+
+
+.chatContent .chat-column > .item > .message-date 
+  font-size: 11px
+  color: darken(mainGrayColor, 30)
+  font-weight: 400
+  margin-bottom: 3px
+
+
+body .chatContent .chat-column.company > .item > .message-date 
+  text-align: end
+  width: 100%
+
+
+body .chatContent .chat-column.customer > .item > .message-date 
+  text-align: start
+  width: 100%
+
+
+body .chatContent .chat-column.company 
+  flex-direction: row-reverse
+  margin-left: 10%
+
+
+body .chatContent .chat-column.company > .item > .chat-icon 
+  margin-right: 0
+  margin-left: 13px
+  color: #3699f6
+
+body
+  .chatContent
+    .chat-column
+      .item
+        .chat-icon
+          // .chat__app-icon
+          //   font-size: 2vh
+          //   color: ThemeRed
+          //   padding: 1px;
+
+//scroll
+.simplebar-track.simplebar-vertical
+  width 9px

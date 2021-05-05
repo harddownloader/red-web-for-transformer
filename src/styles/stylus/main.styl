@@ -1,0 +1,96 @@
+// normalize
+@import "~normalize.css/normalize.css";
+// веб страница
+@import webPage
+// основной файл стилей
+@import style
+// adv classes
+@import animations
+// animation caret
+@import chatingCaret
+// для отображения талицы(которую может выдать бот к ответу)
+@import gridTable
+// variables
+@import vars
+
+//fonts
+@font-face{
+  font-family: "SFUIDisplay"
+  font-style: bold
+  // src: url("~fonts/SFUIDisplay-Bold.ttf") format("truetype")
+  src: url("../../assets/fonts/SFUIDisplay-Bold.ttf") format("truetype")
+}
+@font-face{
+  font-family: 'Calibri'
+  font-style: normal
+  // меняем на относительные пути для того чтобы сразу можно было переносить на
+  // версию со слиянием всех анимашек
+  // src: url("~fonts/Calibri-Regular.ttf")
+  src: url("../../assets/fonts/Calibri-Regular.ttf")
+}
+
+body 
+  font-family: 'Calibri'
+  background-color: #fff
+  margin: 0
+
+#master-container
+  width: 100%
+  margin: 0 auto
+  height: 100%
+
+.chatContentWrapper
+  .date_dialogs
+    text-align: center
+    font-size: 11px
+    margin-bottom: 15px
+    .date_dialogs_item
+      margin: 0px
+      color: darken(mainGrayColor, 30)
+  .options_wrapper
+    margin-bottom: 20px
+    .chat_options
+      .optin_item
+        width: 100%
+        button.option_btn
+          margin: 2px 0px
+          background: #f5f5f5
+          border: none
+          color: #000
+          transition: all 0.5s
+          width: auto
+          padding: 8px 15px
+          border-radius: 8px
+          font-family: 'Roboto', sans-serif;
+          font-weight: 400
+          .opacity05.act_btn
+            background: darken(backgroundOptBtns, 30)
+          .opacity05
+            opacity: 0.5
+            background: darken(backgroundOptBtns, 30) !important
+
+
+.chatSend{
+  height: 48px
+  .chatSend__TextAndSend{
+    position relative
+    height: 80%
+    .sendText-wrap{
+      position: absolute;
+    }
+  }
+  .sendText{
+    resize: none
+    display: block
+    border: 0
+    overflow: hidden
+    color: darken(mainGrayColor, 60)
+    caret-color: #000
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+// медиа запросы
+@import sizes

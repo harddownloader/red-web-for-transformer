@@ -1,0 +1,329 @@
+// animate css
+@import "~animate.css";
+main_color = #e42732
+gray_color = #6d6d6d
+category_img = '../../assets/img/web_page/category.png'
+
+//fonts
+@font-face{
+  font-family: 'M.Video Regular'
+  font-style: normal
+  src: url("../../assets/fonts/M.Video Regular.ttf") format("truetype")
+}
+@font-face{
+  font-family: 'TT Norms Pro ExtraLight'
+  font-style: normal
+  src: url("../../assets/fonts/TTNormsPro/TTNormsPro-ExtraLight.ttf")
+}
+@font-face{
+  font-family: 'TT Norms Pro Regular'
+  font-style: normal
+  src: url("../../assets/fonts/TTNormsPro/TTNormsPro-Regular.ttf")
+}
+@font-face{
+  font-family: 'TT Norms Pro Light'
+  font-style: normal
+  src: url("../../assets/fonts/TTNormsPro/TTNormsPro-Light.ttf")
+}
+
+.presentation-item
+  text-transform: uppercase
+  text-align: center
+  width: 100%
+  position: relative
+  .presentation-item__img
+    height: 70%;
+    margin-bottom: 0.9rem
+    cursor pointer
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+    min-width: 8rem
+    // для tada эффекта
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  p.presentation-item__text
+    font-family: 'TT Norms Pro Regular'
+    color: main_color
+    cursor pointer
+    font-size: 1.1em
+
+// animations
+@-webkit-keyframes custom_tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes custom_tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.animate__custom_tada {
+  -webkit-animation-name: custom_tada;
+  animation-name: custom_tada;
+}
+
+
+.wrapper-container
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.6fr 1fr 1fr 1fr;
+  grid-template-areas: "header header header header" "f_left_main main main f_right_main" "s_left_main main main s_right_main" "left_footer main_bottom main_bottom right_footer";
+
+// header
+.header-container
+  grid-area: header;
+  display: flex
+  justify-content: space-between
+  // height 15%
+
+  .header-block
+    img.header__img
+      //
+  .header-block.header-left-block
+    img.header__img.header-left-block__img
+      margin-top: -14px
+      margin-left: -15px
+  .header-block.header-logo-block
+    margin-top: 15px
+    background-image: url('../../assets/img/web_page/header-logo.png')
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 15rem;
+    min-height: 50px;
+    @media screen and (min-width: 1536px)
+      min-width: 28rem
+  .header-block.header-right-clock 
+    img.header__img.header-right-block__img
+      margin-top: -14px
+
+// center
+// .main-container
+//   display: flex
+//   justify-content: space-around
+//   height: 50%
+//   margin: 0 15rem
+//   @media screen and (max-width: 1400px)
+//     margin: 0px 9rem
+  
+.main-block
+  img.main__img
+    //
+.presentation-item
+  p.presentation-item__text
+    //
+// left
+// .main-block.main-left-block
+//   width 100%
+//   display: flex
+//   flex-wrap: wrap
+//   margin: 0 auto
+//   align-items: center
+  
+// first
+.wrapp-items-block
+  width: 50%
+  height: 100%
+  text-align: center
+.main-left-block
+  display: flex;
+  justify-content: flex-end;
+.main-left-block.presentation-item.first-item
+  grid-area: f_left_main;
+  // height: 50%;
+  .presentation-item__img
+    background-image: url('../../assets/img/web_page/notes.png')
+    height: 70%;
+  .presentation-item__text
+    height: 30%;
+// second
+.main-left-block.presentation-item.second-item
+  grid-area: s_left_main;
+  // height: 50%;
+  .presentation-item__img
+    background-image: url('../../assets/img/web_page/money.png')
+    height: 70%
+  .presentation-item__text
+    height: 30%
+.presentation-item
+  // margin-left: 40px
+img.main__img.main-right-block__img
+  // 
+// center
+.main-block.main-center-block
+  grid-area: main;
+  background-image: url('../../assets/img/web_page/main_image.png')
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: center
+  margin-bottom: 1rem
+  min-width: 50rem
+  @media screen and (max-width: 1400px)
+    min-width: 28rem
+
+// right
+// .main-block.main-right-block
+//   width 100%
+//   display: flex
+//   flex-wrap: wrap
+//   margin: 0 auto
+//   align-items: center
+// first
+.main-right-block
+  display: flex;
+  justify-content: flex-start;
+.main-right-block.presentation-item.first-item
+  grid-area: f_right_main;
+  // height: 50%
+  .presentation-item__img
+    background-image: url('../../assets/img/web_page/search.png')
+    height: 70%
+  .presentation-item__text
+    height: 30%
+// second
+.main-right-block.presentation-item.second-item
+  grid-area: s_right_main;
+  // height: 50%;
+  .presentation-item__img
+    background-image: url('../../assets/img/web_page/group_async.png')
+    height: 70%
+  .presentation-item__text
+    height: 30%
+.presentation-item
+  //
+img.main__img.main-right-block__img
+  //
+
+// bottom
+// .bottom-container
+//   display: flex
+//   justify-content: space-between
+//   height 35%
+//   .bottom-block
+//     // 
+// left
+.bottom-block.bottom-left-block
+  grid-area: left_footer;
+  display: flex
+  align-items: flex-end
+  // margin-left: 30px
+  // margin-bottom: 10px
+  // transform: translate(3px, -40px)
+  .bottom__active-directory
+    
+    text-align: center
+    img.bottom__img.bottom-left-block__img
+      margin-bottom: 10px
+    p.bottom-left-block__description
+      color: gray_color
+      line-height: 1.1
+      margin-bottom: 0px
+      font-family: 'M.Video Regular'
+      font-size: 1.4em
+    p.bottom-left-block__sub-description
+      line-height: 1.2
+      font-family: 'TT Norms Pro ExtraLight'
+      font-size: 0.8em
+      width: 200px
+// center
+.bottom-block.bottom-center-block
+  grid-area: main_bottom;
+  display: flex
+  justify-content: space-around
+  // width: 50%
+  // margin-bottom: 2%
+  // margin-top: 1%
+  .presentation-item
+    .presentation-item__img
+      // height 58%
+
+  .presentation-item.first-item
+    .presentation-item__img
+      background-image: url('../../assets/img/web_page/person.png')
+  .presentation-item.second-item
+    .presentation-item__img
+      background-image: url('../../assets/img/web_page/calendar.png')
+  .presentation-item.the-third
+    .presentation-item__img
+      background-image: url('../../assets/img/web_page/async.png')
+  img.bottom__img.bottom-center-block__img
+    // 
+// right
+.bottom-block.bottom-right-block
+  grid-area: right_footer;
+  display: flex
+  align-items: flex-end
+  justify-content: flex-end;
+  transform: translate(-50px, -40px)
+  .bottom__main-logo
+    // grid-area: right_footer;
+    display: flex
+    .bottom__main-logo-wrapp
+      padding-right: 8px
+      img.bottom__img
+        //
+    p.bottom__description
+      color: main_color
+      width: 100px
+      border-left: 1px solid main_color
+      padding-left: 8px
+      font-family: 'TT Norms Pro Light'
+      line-height: 1.1
+

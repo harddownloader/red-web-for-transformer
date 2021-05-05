@@ -1,0 +1,1320 @@
+// ресайзы
+
+// variables
+@import vars
+
+@media screen and (min-height: 400px)
+  #master-container.noscroll
+    .bg-shape
+    //
+    #chat-box
+      #chat-box-content
+        #chat-box-bg
+        #chat-ui-bg
+          #chat-ui-wrap
+            #chat-ui-top-padding-line
+            #chat-ui
+              #chat-ui-sidebar
+              #chat-ui-main
+                #chat-ui-header
+                  height: 2.8em;
+                  min-height: 2.8em;
+                  #chat-ui-header-logo-and-text
+                    #chat-ui-header-logo
+                      //
+                    #chat-ui-header-text
+                      #chat-ui-header-name-contact
+                        //
+                      #chat-ui-header-theme
+                        //
+                  #chat-ui-header-icons
+                    .chat-ui-header-icons__item
+                      //
+                #chatContent.chat-wrap.chatContent
+                  .chatContentWrapper
+                    margin: 0px 10px
+                    padding: 20px
+                    .date_dialogs
+                      .date_dialogs_item
+                        //
+                    .chat-column
+                      .item
+                        .chat-icon
+                          margin-top: 10px; // it's span
+                          //
+                        .message-date
+                          font-size: 0.8em
+                        .chat-message
+                          font-size: 1em
+                          line-height: 20px;
+                          padding: 10px 15px;
+                    .chat-column.customer
+                      .item
+                        .chat-icon
+                          //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                    .chat-column.company
+                      .item
+                        .chat-icon
+                          margin-top: 5px; // it's img
+                          img
+                            //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                  .ScrollToBottom
+                    right: 15px;
+                    bottom: 10px;
+                    height: ScrollToBottomCirculParam;
+                    width: ScrollToBottomCirculParam;
+                    line-height: ScrollToBottomCirculParam;
+                    box-shadow: 0px 1px 1px 0px darken(mainGrayColor, 30);
+                    img.ScrollToBottom__img
+                      width: 15px;
+                #chat-ui-input
+                  justify-content: space-between;
+                  .input-element
+                    .input-element-item
+                      &.attach
+                        width: 20px; height: 20px;
+                        background: url('../../assets/img/icons/transparent/css_sprites_20px.png') -90px -10px;
+                      &.micro
+                        width: 20px; height: 20px;
+                        background: url('../../assets/img/icons/transparent/css_sprites_20px.png') -127px -10px;
+
+                  .input-element.attach-wrap
+                    .input-element-item.attach
+                      //
+                  .chatSend
+                    //
+                    height: auto
+                    #terminal
+                      //
+                      height: auto
+                      .chatSend__TextAndSend
+                        margin: 0vw;
+                        height: 2em;
+                        line-height: 2em;
+                        .sendText-wrap
+                          background: url('../../assets/img/icons/transparent/emoji.svg') no-repeat scroll 98% 50% #ffffff;
+                          background-size: sendTextBgSize
+                          height 100%
+                          width: 100%;
+                          min-height: 30px;
+                          border-radius: 3.3vh;
+                          textarea#setter.sendText
+                            background: url('../../assets/img/icons/transparent/emoji.svg') no-repeat scroll 98% 50% #ffffff;
+                            background-size: sendTextBgSize
+                            box-shadow: 0px 1px 1px 0px mainGrayColor;
+                            padding: 0em 1em;
+                            font-size: 15px
+                            border-radius: 3.3vh
+                            width 100%
+                            height: 100%;
+                            min-height: 30px
+                            border-radius: 20px;
+                        #getter
+                          height: 100%
+                          width: 80%
+                          span#writer
+                            height: 100%
+                            padding: 0em 1em;
+                            padding-right: 0px
+                            font-size: 15px
+                            position: relative
+                          b#cursor.cursor
+                            font-size 12px
+                            width 3px
+                            max-width 3px
+                            text-indent -5px
+                            height 1.2em
+                            // top: 0.7em
+                            position: relative
+                  .input-element.micro-wrap
+                    .input-element-item.micro
+                      //
+  
+@media screen and (min-height: 550px)
+  #master-container.noscroll
+    .bg-shape
+    //
+    #chat-box
+      #chat-box-content
+        #chat-box-bg
+        #chat-ui-bg
+          #chat-ui-wrap
+            #chat-ui-top-padding-line
+            #chat-ui
+              #chat-ui-sidebar
+              #chat-ui-main
+                #chat-ui-header
+                  #chat-ui-header-logo-and-text
+                    #chat-ui-header-logo
+                      #chat-ui-header-logo__item
+                        span
+                          //
+                    #chat-ui-header-text
+                      #chat-ui-header-name-contact
+                        //
+                      #chat-ui-header-theme
+                        //
+                  #chat-ui-header-icons
+                    .chat-ui-header-icons__item
+                      //
+                #chatContent.chat-wrap.chatContent
+                  .chatContentWrapper
+                    // all imgs
+                    img
+                      width: 3vh;
+                      margin-right: 1vh;
+                    .options_wrapper
+                      margin-bottom: 2vh;
+                      // table (table on export xls cv)
+                      .grid-container
+                        .before-grid
+                          margin: 1vh 0vh;
+                          span
+                            //
+                        .grid
+                          box-shadow: 0px 0px 3px 0.1vh #adadad;
+                          span
+                            padding: 1vh 1vh;
+                      // variations
+                      .chat_options
+                        width: fit-content;
+                        .optin_item
+                          button.option_btn
+                            width: 100%;
+                            text-align: left;
+                            margin: 0.3vh 0px;
+                            padding: 0.8vh 2vh;
+                            font-size: 1em
+                            border-radius: 0.8vh;
+                    .date_dialogs
+                      font-size: 1.5vh
+                      .date_dialogs_item
+                        //
+                    .chat-column
+                      margin-bottom: 1vh;
+                      .item
+                        .chat-icon
+                          font-size: 1vh
+                          width 3vh
+                          height 3vh
+                          line-height: 1vh;
+                          //
+                        .message-date
+                          font-size: 0.8em
+                          margin-bottom: 0.4vh;
+                        .chat-message
+                          //
+                    .chat-column.customer
+                      .item
+                        .chat-icon
+                          //
+                        .message-date
+                          //
+                        .chat-message
+                          border-radius: 0.1vh 2vh 2vh 2vh;
+                    .chat-column.company
+                      .item
+                        .chat-icon
+                          img
+                            //
+                        .message-date
+                          //
+                        .chat-message
+                          border-radius: 2vh 0.1vh 2vh 2vh;
+                  .ScrollToBottom
+                    img.ScrollToBottom__img
+                      //
+                #chat-ui-input
+                  .input-element.attach-wrap
+                    .input-element-item.attach
+                      //
+                  .chatSend
+                    #terminal
+                      .chatSend__TextAndSend
+                        .sendText-wrap
+                          textarea#setter.sendText
+                            //
+                            border-radius: 3.3vh;
+                        #getter
+                          span#writer
+                            padding-right: 0px
+                            font-size: 1em
+                          b#cursor.cursor
+                            //
+                  .input-element.micro-wrap
+                    .input-element-item.micro
+                      //
+    // simple bar custom styles
+    .simplebar-track.simplebar-vertical
+      width 1.5vh
+@media screen and (min-height: 667px)
+  #master-container.noscroll
+    .bg-shape
+    //
+    #chat-box
+      #chat-box-content
+        #chat-box-bg
+        #chat-ui-bg
+          #chat-ui-wrap
+            #chat-ui-top-padding-line
+            #chat-ui
+              #chat-ui-sidebar
+              #chat-ui-main
+                #chat-ui-header
+                  #chat-ui-header-logo-and-text
+                    #chat-ui-header-logo
+                      #chat-ui-header-logo__item
+                        span
+                          //
+                    #chat-ui-header-text
+                      #chat-ui-header-name-contact
+                        //
+                      #chat-ui-header-theme
+                        //
+                  #chat-ui-header-icons
+                    .chat-ui-header-icons__item
+                      //
+                #chatContent.chat-wrap.chatContent
+                  .chatContentWrapper
+                    .options_wrapper
+                      margin-bottom: 2vh;
+                      // table (table on export xls cv)
+                      .grid-container
+                        .before-grid
+                          margin: 1vh 0vh;
+                          span
+                            //
+                        .grid
+                          box-shadow: 0px 0px 3px 0.1vh #adadad;
+                          span
+                            padding: 1vh 1vh;
+                      
+                      // variations
+                      .chat_options
+                        .optin_item
+                          button.option_btn
+                            margin: 0.3vh 0px;
+                            padding: 0.8vh 2vh;
+                            border-radius: 0.8vh;
+                    .date_dialogs
+                      font-size: 1.5vh
+                      .date_dialogs_item
+                        //
+                    .chat-column
+                      margin-bottom: 1vh;
+                      .item
+                        .chat-icon
+                          font-size: 1vh
+                          width 3vh
+                          height 3vh
+                          line-height: 1vh;
+                          img
+                            width: 3vh;
+                            margin-right: 1vh;
+                          //
+                        .message-date
+                          font-size: 0.8em
+                          margin-bottom: 0.4vh;
+                        .chat-message
+                          line-height: 2.5vh;
+                          padding: 1vh 1.5vh;
+                    .chat-column.customer
+                      .item
+                        .chat-icon
+                          //
+                        .message-date
+                          //
+                        .chat-message
+                          border-radius: 0.1vh 2vh 2vh 2vh;
+                    .chat-column.company
+                      .item
+                        .chat-icon
+                          img
+                            //
+                        .message-date
+                          //
+                        .chat-message
+                          border-radius: 2vh 0.1vh 2vh 2vh;
+                  .ScrollToBottom
+                    img.ScrollToBottom__img
+                      //
+                #chat-ui-input
+                  height: 4vw;
+                  .input-element.attach-wrap
+                    .input-element-item.attach
+                      //
+                  .chatSend
+                    #terminal
+                      .chatSend__TextAndSend
+                        .sendText-wrap
+                          textarea#setter.sendText
+                            border-radius: 3.3vh;
+                        #getter
+                          span#writer
+                            padding-right: 0px
+                          b#cursor.cursor
+                            height: 1.7vh;
+                  .input-element.micro-wrap
+                    .input-element-item.micro
+                      //
+    // simple bar custom styles
+    .simplebar-track.simplebar-vertical
+      width 1.1vh
+      max-width: 10px;
+
+@media screen and (min-height: 1000px)
+  #master-container.noscroll
+    .bg-shape
+    //
+    #chat-box
+      #chat-box-content
+        #chat-box-bg
+        #chat-ui-bg
+          height: 65%;
+          width: 90%;
+          #chat-ui-wrap
+            #chat-ui-top-padding-line
+            #chat-ui
+              #chat-ui-sidebar
+              #chat-ui-main
+                #chat-ui-header
+                  height: 5.2vh;
+                  padding: 0 2.2vh;
+                  #chat-ui-header-logo-and-text
+                    #chat-ui-header-logo
+                      #chat-ui-header-logo__item
+                        span
+                          height: 2.7vh;
+                          width: 2.7vh;
+                          line-height: 2.7vh;
+                          font-size: 1.2vh;
+                    #chat-ui-header-text
+                      margin-left: 0.8vh;
+                      #chat-ui-header-name-contact
+                        font-size: 1.4vh;
+                      #chat-ui-header-theme
+                        font-size: 1.2vh;
+                  #chat-ui-header-icons
+                    .chat-ui-header-icons__item
+                      margin: 0px 0.7vh;
+                      img
+                        width: 2vh;
+                #chatContent.chat-wrap.chatContent
+                  .chatContentWrapper
+                    .options_wrapper
+                      margin-bottom: 2vh
+                      // table (table on export xls cv)
+                      .grid-container
+                        .before-grid
+                          span
+                            //
+                        .grid
+                          span
+                            //
+                      
+                      // variations
+                      .chat_options
+                        .optin_item
+                          button.option_btn
+                            margin: .2em 0;
+                            border-radius: .8em;
+                            font-size: 1em;
+                            padding: 0.6em 1.2em;
+                    .date_dialogs
+                      font-size: 1.5vh
+                      .date_dialogs_item
+                        //
+                    .chat-column
+                      margin-bottom: 1vh
+                      .item
+                        .chat-icon
+                          font-size: 1vh
+                          width 3vh
+                          height 3vh
+                          line-height: 1vh
+                          margin-top: 0.3vh
+                          img
+                            width: 3vh
+                            margin-right: 1vh
+                          //
+                        .message-date
+                          font-size: 1em;
+                          margin-bottom: 0.4vh
+                        .chat-message
+                          font-size: 1.8vh
+                          line-height: 2.5vh
+                          padding: 1vh 1.5vh
+                    .chat-column.customer
+                      .item
+                        .chat-icon
+                          img
+                            //
+                          //
+                        .message-date
+                          //
+                        .chat-message
+                          border-radius: 0.1vh 2vh 2vh 2vh
+                    .chat-column.company
+                      .item
+                        .chat-icon
+                          img
+                            //
+                        .message-date
+                          //
+                        .chat-message
+                          border-radius: 2vh 0.1vh 2vh 2vh
+                  .ScrollToBottom
+                    img.ScrollToBottom__img
+                      //
+                #chat-ui-input
+                  height: 6.2vh;
+                  .input-element
+                    .input-element-item
+                      //
+                  .input-element.attach-wrap
+                    .input-element-item.attach
+                      //
+                  .chatSend
+                    #terminal
+                      .chatSend__TextAndSend
+                        .sendText-wrap
+                          font-size: 1.8vh;
+                          textarea#setter.sendText
+                            padding: 0em 1em;
+                            border-radius: 3.3vh;
+                            font-size: 1.8vh;
+                        #getter
+                          span#writer
+                            padding: 0em 1em;
+                            padding-right: 0px
+                            font-size: 1.8vh;
+                          b#cursor.cursor
+                            //
+                  .input-element.micro-wrap
+                    .input-element-item.micro
+                      //
+    // simple bar custom styles
+    .simplebar-track.simplebar-vertical
+      width: 0.8vh
+
+@media screen and (min-width: 950px)
+  #master-container.noscroll
+    .bg-shape
+    //
+    #chat-box
+      #chat-box-content
+        #chat-box-bg
+        #chat-ui-bg
+          width: 760px;
+          height: 485px;
+          #chat-ui-wrap
+            #chat-ui-top-padding-line
+            #chat-ui
+              #chat-ui-sidebar
+              #chat-ui-main
+                #chat-ui-header
+                  #chat-ui-header-logo-and-text
+                    #chat-ui-header-logo
+                      #chat-ui-header-logo__item
+                        span
+                          //
+                    #chat-ui-header-text
+                      #chat-ui-header-name-contact
+                        font-size: 0.8em;
+                      #chat-ui-header-theme
+                        //
+                  #chat-ui-header-icons
+                    .chat-ui-header-icons__item
+                      //
+                #chatContent.chat-wrap.chatContent
+                  .chatContentWrapper
+                    .options_wrapper
+                      // table (table on export xls cv)
+                      .grid-container
+                        .before-grid
+                          span
+                            //
+                        .grid
+                          span
+                            //
+                      
+                      // variations
+                      .chat_options
+                        .optin_item
+                          button.option_btn
+                            //
+                    .date_dialogs
+                      .date_dialogs_item
+                        //
+                    .chat-column
+                      .item
+                        .chat-icon
+                          img
+                            //
+                         //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                    .chat-column.customer
+                      .item
+                        .chat-icon
+                          img
+                            //
+                          //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                    .chat-column.company
+                      .item
+                        .chat-icon
+                          img
+                            //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                  .ScrollToBottom
+                    img.ScrollToBottom__img
+                      //
+                #chat-ui-input
+                  .input-element.attach-wrap
+                    .input-element-item.attach
+                      //
+                  .chatSend
+                    #terminal
+                      .chatSend__TextAndSend
+                        .sendText-wrap
+                          background-size: sendTextBgSize + 0.25em
+                          textarea#setter.sendText
+                            background-size: sendTextBgSize + 0.25em
+                            padding: 0em 1em;
+                        #getter
+                          span#writer
+                            padding: 0em 1em;
+                            padding-right: 0em;
+                          b#cursor.cursor
+                            //
+                  .input-element.micro-wrap
+                    .input-element-item.micro
+                      //
+    // simple bar custom styles
+    .simplebar-track.simplebar-vertical
+      //
+@media screen and (min-width: 1100px)
+  #master-container.noscroll
+    .bg-shape
+    //
+    #chat-box
+      #chat-box-content
+        #chat-box-bg
+          //
+        #chat-ui-bg
+          width: 880px;
+          height: 562px;
+          #chat-ui-wrap
+            #chat-ui-top-padding-line
+            #chat-ui
+              #chat-ui-sidebar
+              #chat-ui-main
+                #chat-ui-header
+                  #chat-ui-header-logo-and-text
+                    #chat-ui-header-logo
+                      #chat-ui-header-logo__item
+                        span
+                          //
+                    #chat-ui-header-text
+                      #chat-ui-header-name-contact
+                        font-size: 1em;
+                      #chat-ui-header-theme
+                        //
+                  #chat-ui-header-icons
+                    .chat-ui-header-icons__item
+                      //
+                #chatContent.chat-wrap.chatContent
+                  .chatContentWrapper
+                    .options_wrapper
+                      // table (table on export xls cv)
+                      .grid-container
+                        .before-grid
+                          span
+                            //
+                        .grid
+                          span
+                            //
+                      
+                      // variations
+                      .chat_options
+                        .optin_item
+                          button.option_btn
+                            //
+                    .date_dialogs
+                      .date_dialogs_item
+                        //
+                    .chat-column
+                      .item
+                        .chat-icon
+                          img
+                            //
+                          //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                    .chat-column.customer
+                      .item
+                        .chat-icon
+                          img
+                            //
+                          //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                    .chat-column.company
+                      .item
+                        .chat-icon
+                          img
+                            //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                  .ScrollToBottom
+                    img.ScrollToBottom__img
+                      //
+                #chat-ui-input
+                  .input-element.attach-wrap
+                    .input-element-item.attach
+                      //
+                  .chatSend
+                    #terminal
+                      .chatSend__TextAndSend
+                        .sendText-wrap
+                          
+                          textarea#setter.sendText
+                            //
+                        #getter
+                          span#writer
+                            padding-right: 0px
+                          b#cursor.cursor
+                            //
+                  .input-element.micro-wrap
+                    .input-element-item.micro
+                      //
+    // simple bar custom styles
+    .simplebar-track.simplebar-vertical
+      //
+@media screen and (min-width: 1400px)
+  #master-container.noscroll
+    .bg-shape
+    //
+    #chat-box
+      #chat-box-content
+        #chat-box-bg
+          //
+        #chat-ui-bg
+          width: 1120px;
+          height: 715px;
+          #chat-ui-wrap
+            #chat-ui-top-padding-line
+            #chat-ui
+              #chat-ui-sidebar
+              #chat-ui-main
+                #chat-ui-header
+                  height: 3.5em;
+                  min-height: 3.5em;
+                  #chat-ui-header-logo-and-text
+                    #chat-ui-header-logo
+                      #chat-ui-header-logo__item
+                        span
+                          //
+                    #chat-ui-header-text
+                      #chat-ui-header-name-contact
+                        //
+                      #chat-ui-header-theme
+                        //
+                  #chat-ui-header-icons
+                    .chat-ui-header-icons__item
+                      margin: 0px 0.5em;
+                      img
+                        width: 1.3em;
+                #chatContent.chat-wrap.chatContent
+                  .chatContentWrapper
+                    .options_wrapper
+                      // table (table on export xls cv)
+                      .grid-container
+                        .before-grid
+                          span
+                            //
+                        .grid
+                          span
+                            //
+                      
+                      // variations
+                      .chat_options
+                        .optin_item
+                          button.option_btn
+                            //
+                    .date_dialogs
+                      .date_dialogs_item
+                        //
+                    .chat-column
+                      .item
+                        .chat-icon
+                          img
+                            //
+                          //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                    .chat-column.customer
+                      .item
+                        .chat-icon
+                          img
+                            //
+                          //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                    .chat-column.company
+                      .item
+                        .chat-icon
+                          img
+                            //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                  .ScrollToBottom
+                    img.ScrollToBottom__img
+                      //
+                #chat-ui-input
+                  justify-content: space-around;
+                  .input-element
+                    .input-element-item
+                      //
+                      &.attach
+                        width: 30px; height: 30px;
+                        background: url('../../assets/img/icons/transparent/css_sprites_30px.png') -60px -60px;
+                      &.micro
+                        width: 22px; height: 30px;
+                        background: url('../../assets/img/icons/transparent/css_sprites_30px.png') -182px -10px;
+                  .input-element.attach-wrap
+                    .input-element-item.attach
+                      //
+                  .chatSend
+                    #terminal
+                      .chatSend__TextAndSend
+                        height: 2vw;
+                        line-height: 2vw;
+                        .sendText-wrap
+                          textarea#setter.sendText
+                            padding: 0em 2em;
+                        #getter
+                          span#writer
+                            padding: 0em 2em;
+                            padding-right: 0px
+                          b#cursor.cursor
+                            height 1.5em
+                            margin-bottom: -3px;
+                  .input-element.micro-wrap
+                    .input-element-item.micro
+                      //
+    // simple bar custom styles
+    .simplebar-track.simplebar-vertical
+      //
+@media screen and (min-width: 1700px) and (min-height: 1080px)
+  #master-container.noscroll
+    .bg-shape
+    //
+    #chat-box
+      #chat-box-content
+        #chat-box-bg
+          //
+        #chat-ui-bg
+          width: 1360px;
+          height 869px;
+          #chat-ui-wrap
+            #chat-ui-top-padding-line
+            #chat-ui
+              #chat-ui-sidebar
+              #chat-ui-main
+                #chat-ui-header
+                  #chat-ui-header-logo-and-text
+                    #chat-ui-header-logo
+                      #chat-ui-header-logo__item
+                        span
+                          //
+                    #chat-ui-header-text
+                      #chat-ui-header-name-contact
+                        //
+                      #chat-ui-header-theme
+                        //
+                  #chat-ui-header-icons
+                    .chat-ui-header-icons__item
+                      .header-icon-item
+                        &.bg-search
+                          width: 29px; height: 30px;
+                          background: url('../../assets/img/icons/transparent/css_sprites_30px.png') -132px -60px;
+                        &.bg-phone
+                          width: 30px; height: 30px;
+                          background: url('../../assets/img/icons/transparent/css_sprites_30px.png') -132px -10px;
+                        &.bg-camera
+                          width: 30px; height: 20px;
+                          background: url('../../assets/img/icons/transparent/css_sprites_30px.png') -60px -110px;
+                        &.bg-logout
+                          width: 38px; height: 30px;
+                          background: url('../../assets/img/icons/transparent/css_sprites_30px.png') -74px -10px;
+                        &.bg-archive
+                          width: 30px; height: 26px;
+                          background: url('../../assets/img/icons/transparent/css_sprites_30px.png') -10px -110px;
+                        &.bg-more
+                          width: 30px; height: 6px;
+                          background: url('../../assets/img/icons/transparent/css_sprites_30px.png') -10px -156px;
+                #chatContent.chat-wrap.chatContent
+                  .chatContentWrapper
+                    .options_wrapper
+                      // table (table on export xls cv)
+                      .grid-container
+                        .before-grid
+                          span
+                            //
+                        .grid
+                          span
+                            //
+                      
+                      // variations
+                      .chat_options
+                        .optin_item
+                          button.option_btn
+                            //
+                    .date_dialogs
+                      .date_dialogs_item
+                        //
+                    .chat-column
+                      .item
+                        .chat-icon
+                          img
+                            //
+                          //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                    .chat-column.customer
+                      .item
+                        .chat-icon
+                          img
+                            //
+                          //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                    .chat-column.company
+                      .item
+                        .chat-icon
+                          img
+                            //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                  .ScrollToBottom
+                    img.ScrollToBottom__img
+                      //
+                #chat-ui-input
+                  .input-element
+                    .input-element-item
+                      &.attach
+                        width: 40px; height: 40px;
+                        background: url('../../assets/img/icons/transparent/css_sprites_40px.png') -70px -10px;
+                      &.micro
+                        width: 29px; height: 40px;
+                        background: url('../../assets/img/icons/transparent/css_sprites_40px.png') -10px -130px;
+                  .input-element.attach-wrap
+                    .input-element-item.attach
+                      //
+                  .chatSend
+                    #terminal
+                      .chatSend__TextAndSend
+                        .sendText-wrap
+                          
+                          textarea#setter.sendText
+                            //
+                        #getter
+                          span#writer
+                            padding-right: 0px
+                          b#cursor.cursor
+                            //
+                  .input-element.micro-wrap
+                    .input-element-item.micro
+                      //
+    // simple bar custom styles
+    .simplebar-track.simplebar-vertical
+      //
+
+// xl displays
+@media screen and (min-width: 1900px) and (min-height: 1200px )
+  #master-container.noscroll
+    .bg-shape
+    //
+    #chat-box
+      #chat-box-content
+        #chat-box-bg
+          //
+        #chat-ui-bg
+          width: 1520px;
+          height 971px;
+          #chat-ui-wrap
+            #chat-ui-top-padding-line
+            #chat-ui
+              #chat-ui-sidebar
+              #chat-ui-main
+                #chat-ui-header
+                  height: 7em;
+                  #chat-ui-header-logo-and-text
+                    #chat-ui-header-logo
+                      #chat-ui-header-logo__item
+                        span
+                          height: 3vh;
+                          width: 3vh;
+                          line-height: 3vh;
+                          font-size: 1.5vh;
+                    #chat-ui-header-text
+                      #chat-ui-header-name-contact
+                        font-size: 1.5vh;
+                      #chat-ui-header-theme
+                        font-size: 1.4vh;
+                  #chat-ui-header-icons
+                    .chat-ui-header-icons__item
+                      margin: 0px 1vh;
+                      img
+                        width: 2.2vh;
+                #chatContent.chat-wrap.chatContent
+                  .chatContentWrapper
+                    .options_wrapper
+                      // table (table on export xls cv)
+                      .grid-container
+                        .before-grid
+                          span
+                            //
+                        .grid
+                          span
+                            //
+                      
+                      // variations
+                      .chat_options
+                        .optin_item
+                          button.option_btn
+                            //
+                    .date_dialogs
+                      .date_dialogs_item
+                        //
+                    .chat-column
+                      .item
+                        .chat-icon
+                          img
+                            //
+                          //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                    .chat-column.customer
+                      .item
+                        .chat-icon
+                          img
+                            //
+                          //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                    .chat-column.company
+                      .item
+                        .chat-icon
+                          img
+                            //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                  .ScrollToBottom
+                    img.ScrollToBottom__img
+                      //
+                #chat-ui-input
+                  // height: 10.2vh;
+                  height: 7em;
+                  .input-element
+                    .input-element-item
+                      // max-width: 3em;
+                  .input-element.attach-wrap
+                    .input-element-item.attach
+                      //
+                  .chatSend
+                    height: auto;
+                    #terminal
+                      height: auto;
+                      .chatSend__TextAndSend
+                        margin: 0px;
+                        height: 3vw;
+                        line-height: 3vw;
+                        .sendText-wrap
+                          background-size: sendTextBgSize + 0.65em
+                          textarea#setter.sendText
+                            background-size: sendTextBgSize + 0.65em
+                        #getter
+                          span#writer
+                            padding-right: 0px
+                          b#cursor.cursor
+                            //
+                  .input-element.micro-wrap
+                    .input-element-item.micro
+                      //
+    // simple bar custom styles
+    .simplebar-track.simplebar-vertical
+      //
+@media screen and (min-width: 2100px) and (min-height: 1200px )
+  #master-container.noscroll
+    .bg-shape
+    //
+    #chat-box
+      #chat-box-content
+        #chat-box-bg
+          //
+        #chat-ui-bg
+          width 1680px
+          height 1073px
+          #chat-ui-wrap
+            #chat-ui-top-padding-line
+            #chat-ui
+              #chat-ui-sidebar
+              #chat-ui-main
+                #chat-ui-header
+                  #chat-ui-header-logo-and-text
+                    #chat-ui-header-logo
+                      #chat-ui-header-logo__item
+                        span
+                          //
+                    #chat-ui-header-text
+                      #chat-ui-header-name-contact
+                        //
+                      #chat-ui-header-theme
+                        //
+                  #chat-ui-header-icons
+                    .chat-ui-header-icons__item
+                      //
+                #chatContent.chat-wrap.chatContent
+                  .chatContentWrapper
+                    .options_wrapper
+                      // table (table on export xls cv)
+                      .grid-container
+                        .before-grid
+                          span
+                            //
+                        .grid
+                          span
+                            //
+                      
+                      // variations
+                      .chat_options
+                        .optin_item
+                          button.option_btn
+                            //
+                    .date_dialogs
+                      .date_dialogs_item
+                        //
+                    .chat-column
+                      .item
+                        .chat-icon
+                          img
+                            //
+                          //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                    .chat-column.customer
+                      .item
+                        .chat-icon
+                          img
+                            //
+                          //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                    .chat-column.company
+                      .item
+                        .chat-icon
+                          img
+                            //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                  .ScrollToBottom
+                    height: ScrollToBottomCirculParam + 1.8em
+                    width: ScrollToBottomCirculParam + 1.8em
+                    right: 1vw;
+                    bottom: 1vw;
+                    line-height: ScrollToBottomCirculParam + 1.8em
+                    img.ScrollToBottom__img
+                      //
+                      width: 2em;
+                #chat-ui-input
+                  .input-element
+                    .input-element-item
+                      &.attach
+                        width: 50px; height: 50px;
+                        background: url('../../assets/img/icons/transparent/css_sprites_50px.png') -80px -10px;
+                        // width: 30px; height: 30px;
+                        // background: url('../../assets/img/icons/transparent/css_sprites_30px.png') -60px -60px;
+                        // width: 40px; height: 40px;
+                        // background: url('../../assets/img/icons/transparent/css_sprites_40px.png') -70px -10px;
+                      &.micro
+                        width: 36px; height: 50px;
+                        background: url('../../assets/img/icons/transparent/css_sprites_50px.png') -218px -10px;
+                        // width: 30px; height: 30px;
+                        // background: url('../../assets/img/icons/transparent/css_sprites_30px.png') -132px -10px;
+                        // width: 29px; height: 40px;
+                        // background: url('../../assets/img/icons/transparent/css_sprites_40px.png') -10px -130px;
+                  .input-element.attach-wrap
+                    .input-element-item.attach
+                      //
+                  .chatSend
+                    #terminal
+                      .chatSend__TextAndSend
+                        .sendText-wrap
+                          
+                          textarea#setter.sendText
+                            //
+                        #getter
+                          span#writer
+                            padding-right: 0px
+                          b#cursor.cursor
+                            height 2em
+                  .input-element.micro-wrap
+                    .input-element-item.micro
+                      //
+    // simple bar custom styles
+    .simplebar-track.simplebar-vertical
+      //
+@media screen and (min-width: 2560px) and (min-height: 1600px )
+  #master-container.noscroll
+    .bg-shape
+    //
+    #chat-box
+      #chat-box-content
+        #chat-box-bg
+          //
+        #chat-ui-bg
+          width 2070px
+          height 1322px
+          #chat-ui-wrap
+            #chat-ui-top-padding-line
+            #chat-ui
+              #chat-ui-sidebar
+              #chat-ui-main
+                #chat-ui-header
+                  height: 4.2vw;
+                  #chat-ui-header-logo-and-text
+                    #chat-ui-header-logo
+                      #chat-ui-header-logo__item
+                        span
+                          //
+                    #chat-ui-header-text
+                      #chat-ui-header-name-contact
+                        //
+                      #chat-ui-header-theme
+                        //
+                  #chat-ui-header-icons
+                    .chat-ui-header-icons__item
+                      //
+                #chatContent.chat-wrap.chatContent
+                  .chatContentWrapper
+                    .options_wrapper
+                      // table (table on export xls cv)
+                      .grid-container
+                        .before-grid
+                          span
+                            //
+                        .grid
+                          span
+                            //
+                      
+                      // variations
+                      .chat_options
+                        .optin_item
+                          button.option_btn
+                            //
+                    .date_dialogs
+                      .date_dialogs_item
+                        //
+                    .chat-column
+                      .item
+                        .chat-icon
+                          img
+                            //
+                          //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                    .chat-column.customer
+                      .item
+                        .chat-icon
+                          img
+                            //
+                          //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                    .chat-column.company
+                      .item
+                        .chat-icon
+                          img
+                            //
+                        .message-date
+                          //
+                        .chat-message
+                          //
+                  .ScrollToBottom
+                    img.ScrollToBottom__img
+                      //
+                #chat-ui-input
+                  .input-element.attach-wrap
+                    .input-element-item.attach
+                      //
+                  .chatSend
+                    #terminal
+                      .chatSend__TextAndSend
+                        .sendText-wrap
+                          
+                          textarea#setter.sendText
+                            //
+                        #getter
+                          span#writer
+                            padding-right: 0px
+                          b#cursor.cursor
+                            height 2em
+                  .input-element.micro-wrap
+                    .input-element-item.micro
+                      //
+    // simple bar custom styles
+    .simplebar-track.simplebar-vertical
+      //

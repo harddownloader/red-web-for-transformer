@@ -1,0 +1,24 @@
+@import vars
+.cursor 
+  background-color blackColor
+  color blackColor
+  position relative
+  opacity 0
+  overflow hidden
+  display inline-block
+  text-decoration blink
+
+.cursor.cursorEnabled 
+  opacity 0.5
+  animation blinker 1s linear infinite
+
+#terminal 
+  cursor text
+
+#writer
+  color: lighten(blackColor, 10%) 
+
+@keyframes blinker {
+  50% { opacity: 0.0; }
+}
+  
