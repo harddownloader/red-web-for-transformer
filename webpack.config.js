@@ -50,7 +50,7 @@ module.exports = {
     extensions: ['.js'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      fonts: path.join(__dirname, 'src/assets/fonts'),
+      fonts: path.join(__dirname, 'src/chats/assets/fonts'),
     },
   },
   devtool: devMode ? 'source-map' : false,
@@ -73,20 +73,25 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        {
+        // {
+        //   // imgs
+        //   from: path.resolve(__dirname, 'src/chats/assets/img'),
+        //   to: 'chats/assets/img',
+        // },
+        // {
+        //   // html
+        //   from: path.resolve(__dirname, 'src/chats/assets/html'),
+        //   to: 'chats/assets/html',
+        // },
+        // {
+        //   // fonts
+        //   from: path.resolve(__dirname, 'src/chats/assets/fonts'),
+        //   to: 'chats/assets/fonts',
+        // },
+         {
           // imgs
-          from: path.resolve(__dirname, 'src/assets/img'),
-          to: 'assets/img',
-        },
-        {
-          // html
-          from: path.resolve(__dirname, 'src/assets/html'),
-          to: 'assets/html',
-        },
-        {
-          // fonts
-          from: path.resolve(__dirname, 'src/assets/fonts'),
-          to: 'assets/fonts',
+          from: path.resolve(__dirname, 'src/chats/assets'),
+          to: 'chats/assets',
         },
       ],
     }),

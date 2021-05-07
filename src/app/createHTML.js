@@ -12,7 +12,7 @@ function getCurrentDirectory() {
  */
 function getPathToHtmlFile() {
   const currentPath = getCurrentDirectory()
-  return currentPath + '/assets/html/redWeb.html'
+  return currentPath + '/chats/assets/html/redWeb.html'
 }
 
 /**
