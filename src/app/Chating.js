@@ -135,6 +135,42 @@ export class Chating {
             '</div>' +
             '</div>'
           options_html_container.innerHTML = options_html_content
+        } else if (options === 'table2') {
+          options_html_content =
+            '<div class="grid-container">' +
+            '<div class="before-grid">' +
+            '<span>.XLSX</span>' +
+            '<span>.CSV</span>' +
+            '</div>' +
+            '<div class="grid two_rows">' +
+            '<span><strong>Выплачено</strong></span>' +
+            '<span><strong>Сумма</strong></span>' +
+            '<span>Аванс</span>' +
+            '<span>15 000</span>' +
+            '<span class="without_border"><strong>Всего выплачено</strong></span>' +
+            '<span class="without_border"><strong>15 000</strong></span>' +
+            '</div>' +
+            '</div>'
+          options_html_container.innerHTML = options_html_content
+        } else if (options === 'table3') {
+          options_html_content =
+            '<div class="grid-container">' +
+            '<div class="before-grid">' +
+            '<span>.XLSX</span>' +
+            '<span>.CSV</span>' +
+            '</div>' +
+            '<div class="grid two_rows">' +
+            '<span><strong>Дней отпуска</strong></span>' +
+            '<span>20</span>' +
+            '<span>Плановая Дата начала отпуска</span>' +
+            '<span>15.10.2020</span>' +
+            '<span>Использовано дней</span>' +
+            '<span>12</span>' +
+            '<span class="without_border">Осталось дней</span>' +
+            '<span class="without_border">8</span>' +
+            '</div>' +
+            '</div>'
+          options_html_container.innerHTML = options_html_content
         } else if (typeof options === 'boolean') {
           // yes or no
           options_html_content =
