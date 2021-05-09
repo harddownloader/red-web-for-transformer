@@ -471,9 +471,15 @@ export class Chating {
           let getHeightTextInINputLasted = localStorage.getItem(
             'textHeigthForDetectNewLine'
           )
+
+          const getterWidth = document.querySelector('#getter').offsetWidth
+          const setterWidth = document.querySelector('#writer').offsetWidth
+
+
           if (
-            getHeightTextInINput != getHeightTextInINputLasted &&
-            getHeightTextInINput > getHeightTextInINputLasted
+            // getHeightTextInINput != getHeightTextInINputLasted &&
+            // getHeightTextInINput > getHeightTextInINputLasted
+            (setterWidth + 20) > getterWidth
           ) {
             let raznica =
               Number(getHeightTextInINput) - Number(getHeightTextInINputLasted)
@@ -483,13 +489,28 @@ export class Chating {
               lineHeigthThisLine + lineHeigthAndPOGRESHNOST
 
             const countLocalStorage2 = localStorage.getItem(
-              'textHeigthForDetectNewLine__numberCounterStartingSecondLine'
+                'textHeigthForDetectNewLine__numberCounterStartingSecondLine'
             )
             const countLocalStorage3 = localStorage.getItem(
-              'textHeigthForDetectNewLine__numberCounterStartingThirdLine'
+                'textHeigthForDetectNewLine__numberCounterStartingThirdLine'
             )
 
-            if (raznica > otlichitelnoeChislo && countLocalStorage3 == '0') {
+            let CounerForRmSymbolsStr = Number(
+                localStorage.getItem(
+                    'textHeigthForDetectNewLine__numberCounterStartingSecondLine'
+                )
+            )
+            let savedTxtInField = document.querySelector('#writer')
+                .textContent
+            let obrazanayaSrokaPoSimwoly = savedTxtInField.slice(
+                CounerForRmSymbolsStr
+            )
+            // console.log('obrazanayaSrokaPoSimwoly' , obrazanayaSrokaPoSimwoly)
+            // console.log('то что нужно', obrazanayaSrokaPoSimwoly.substring(1))
+            this.setForSetterOnly(obrazanayaSrokaPoSimwoly.substring(1))
+            this.setForWriter()
+
+            if (raznica > otlichitelnoeChislo && countLocalStorage3 == '0' && false) {
               // то это 3й цикл( так как на 1м 2числа равны,2м разница около 20, 3м около 40)
               let CounerForRmSymbolsStr = Number(
                 localStorage.getItem(
