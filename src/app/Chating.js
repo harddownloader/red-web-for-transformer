@@ -408,21 +408,17 @@ export class Chating {
     }
 
     if (text === 'Да' || text === 'Нет') {
-      // делаем так чтобы юзер мог просто ответить "нет" (т.е. нет не как ответ на вопрос да/нет)
-      let lastElementInList__class = document.querySelector(
-        '.chatContentWrapper'
-      ).lastChild.classList
-      if (text === 'Да' && lastElementInList__class === 'options_wrapper') {
+      if (text === 'Да') {
         // когда мы ответам да (на выбор да.нет)
         const btn_option_choose = document.querySelectorAll('button.option_btn')
+        console.log('btn_option_choose[btn_option_choose.length - 2]', btn_option_choose[btn_option_choose.length - 2])
         AddClass(btn_option_choose[btn_option_choose.length - 2], 'act_btn') // .length - 1 это НЕТ, а .length - 2 это ДА
         // add opacity current buttons
         AddClass(btn_option_choose[btn_option_choose.length - 1], 'opacity05')
         AddClass(btn_option_choose[btn_option_choose.length - 2], 'opacity05')
         a = text.length
       } else if (
-        text === 'Нет' &&
-        lastElementInList__class === 'options_wrapper'
+        text === 'Нет'
       ) {
         // когда мы ответам да (на выбор да.нет)
         const btn_option_choose = document.querySelectorAll('button.option_btn')
