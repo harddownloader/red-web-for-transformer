@@ -163,11 +163,37 @@ export class Chating {
             '<span><strong>Дней отпуска</strong></span>' +
             '<span>20</span>' +
             '<span>Плановая Дата начала отпуска</span>' +
-            '<span>15.10.2020</span>' +
+            '<span>15.10.2021</span>' +
             '<span>Использовано дней</span>' +
             '<span>12</span>' +
             '<span class="without_border">Осталось дней</span>' +
             '<span class="without_border">8</span>' +
+            '</div>' +
+            '</div>'
+          options_html_container.innerHTML = options_html_content
+        } else if (options === 'table4') {
+          options_html_content =
+            '<div class="grid-container">' +
+            '<div class="before-grid">' +
+            '<span>.XLSX</span>' +
+            '<span>.CSV</span>' +
+            '</div>' +
+            '<div class="grid five_rows">' +
+            '<span><strong>Номер счета</strong></span>' +
+            '<span><strong>Статус платежа</strong></span>' +
+            '<span><strong>Дата оплаты</strong></span>' +
+            '<span><strong>Сумма оплаты</strong></span>' +
+            '<span><strong>Валюта оплаты</strong></span>' +
+            '<span>187</span>' +
+            '<span>Включен в график платежей</span>' +
+            '<span></span>' +
+            '<span>100000.00</span>' +
+            '<span>RUB</span>' +
+            '<span class="without_border">266</span>' +
+            '<span class="without_border">Оплачен</span>' +
+            '<span class="without_border">18.04.2021</span>' +
+            '<span class="without_border">20250.00</span>' +
+            '<span class="without_border">RUB</span>' +
             '</div>' +
             '</div>'
           options_html_container.innerHTML = options_html_content
