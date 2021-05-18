@@ -8,6 +8,8 @@ import { BuildPhone } from './Builder'
 
 import '../lib/timerHub' // чтобы мочь застопить все анимации если нужно закрыть окно
 import { ControlChatScrollEvent } from '../lib/controlChatScrollEvent'
+import {markCurrentMessageAsUsed, checkCurrentMessageAsUsed} from './TransformerDialogsMigration'
+
 
 /**
  * класс отвечающий за переписку
@@ -255,6 +257,9 @@ export class Chating {
     dialog,
     time,
     options,
+    delay,
+    dialogs,
+    i_forTimer
   ) {
     var msg_list = document.getElementsByClassName('chatContentWrapper')
 
@@ -282,9 +287,17 @@ export class Chating {
     msg_list[0].appendChild(container)
     var chat_columns = document.querySelectorAll('.chat-column')
 
+    let fadeInDuration = 1000
+
+    console.log('buildMessage - delay', delay)
+    if(delay === 0) {
+      fadeInDuration = 0
+    }
+    
+
     var count = chat_columns.length - 1
     new FX().fadeIn(chat_columns[count], {
-      duration: 1000,
+      duration: fadeInDuration,
       complete: function () {
         // console.log('Complete')
       },
@@ -294,7 +307,7 @@ export class Chating {
       msg_list[0].appendChild(options_html_container)
       var options_wrapper = document.querySelectorAll('.options_wrapper')
       new FX().fadeIn(options_wrapper[options_wrapper.length - 1], {
-        duration: 1000,
+        duration: fadeInDuration,
         complete: function () {
           // console.log('Complete')
         },
@@ -305,18 +318,27 @@ export class Chating {
     new BuildPhone().setInputField() // ставим "placeholder" полю ввода
 
     // Scroll
-    async function AnimationScrollInRecursion(i) {
+    async function AnimationScrollInRecursion(i, delayScroll) {
       const timeout = (ms) =>
         new Promise((resolve) =>
           window.timerHub.setTimeout('preBuildMessageApp', resolve, ms)
         )
 
-      await timeout(25)
+      console.log('AnimationScrollInRecursion - delayScroll', delayScroll)
+
+      let pxToScrollTop = 5
+      if (delayScroll !== 0) {
+        await timeout(delayScroll)
+      } else {
+        // на сколько пикселей двигается скролл при каждой рекурсии
+        pxToScrollTop = 300
+      }
+      
 
       let scrollTopOld = document.querySelector('.simplebar-content-wrapper')
         .scrollTop
       document.querySelector('.simplebar-content-wrapper').scrollTop =
-        5 + scrollTopOld
+        pxToScrollTop + scrollTopOld
       let getCurrentScrollTop = document.querySelector(
         '.simplebar-content-wrapper'
       ).scrollTop
@@ -343,13 +365,22 @@ export class Chating {
       } else {
         // продолжаем переть скролл
         i = i + 0.5
-        await AnimationScrollInRecursion(i)
+        await AnimationScrollInRecursion(i, delayScroll)
       }
     }
 
     if (document.querySelectorAll('.chat-column').length > 1) {
-      AnimationScrollInRecursion(0)
+      let delayScroll = 25
+
+      if (checkCurrentMessageAsUsed(dialogs, i_forTimer) ) {
+        delayScroll = 0
+      }
+      console.log('delayScroll', delayScroll)
+
+      AnimationScrollInRecursion(0, delayScroll)
     }
+
+    markCurrentMessageAsUsed(dialogs, i_forTimer)
   }
 
   /**
@@ -400,7 +431,7 @@ export class Chating {
    * @param {*} timeTimeout 
    * @param {*} delay 
    */
-  async chatinUserAnimation(a, text, timeTimeout, delay) {
+  async chatinUserAnimation(a, text, timeTimeout, delay, dialogs, i_forTimer) {
     const timeout = (ms) =>
       new Promise((resolve) =>
         window.timerHub.setTimeout('chatinUserAnimation', resolve, ms)
@@ -415,6 +446,11 @@ export class Chating {
       document.querySelector('.sendText').style.opacity = '0.5'
       return
     } else if (a === 0) {
+
+      if (checkCurrentMessageAsUsed(dialogs, i_forTimer) ) {
+        delay = 0
+      }
+
       await timeout(delay)
       timeTimeout = 100
     } else {
@@ -503,8 +539,6 @@ export class Chating {
 
 
           if (
-            // getHeightTextInINput != getHeightTextInINputLasted &&
-            // getHeightTextInINput > getHeightTextInINputLasted
             (setterWidth + 20) > getterWidth
           ) {
             let raznica =
@@ -531,49 +565,11 @@ export class Chating {
             let obrazanayaSrokaPoSimwoly = savedTxtInField.slice(
                 CounerForRmSymbolsStr
             )
-            // console.log('obrazanayaSrokaPoSimwoly' , obrazanayaSrokaPoSimwoly)
-            // console.log('то что нужно', obrazanayaSrokaPoSimwoly.substring(1))
             this.setForSetterOnly(obrazanayaSrokaPoSimwoly.substring(1))
             this.setForWriter()
 
             if (raznica > otlichitelnoeChislo && countLocalStorage3 == '0' && false) {
-              // то это 3й цикл( так как на 1м 2числа равны,2м разница около 20, 3м около 40)
-              let CounerForRmSymbolsStr = Number(
-                localStorage.getItem(
-                  'textHeigthForDetectNewLine__numberCounterStartingSecondLine'
-                )
-              )
-              let savedTxtInField = document.querySelector('#writer')
-                .textContent
-              // console.log(savedTxtInField.slice(CounerForRmSymbolsStr))
 
-              let obrazanayaSrokaPoSimwoly = savedTxtInField.slice(
-                CounerForRmSymbolsStr
-              )
-              // обрезаем строку , по символу , который мы зпомнили
-              // то что получилось режим с общим предложением , чтобы получить 1ю часть предложения(до обрезки части предложения)
-              // после мы находим послений пробел в этой части и то ,что за ним (т.е. кусок слова , об которое мы поделили предложение на 2 части в 1й раз)
-              // вот это слово мы и добавляем к 2й части предложения (которую мы отрезали)
-              // выходит если мы порезали преложение на каком либо слове, то мы находим недостающюю часть этого слова и плюсуем к той что нужно вывести
-              // итого мы перегосим слово целиком , а не его фрагмент
-              let needWordPart = savedTxtInField
-                .split(obrazanayaSrokaPoSimwoly)[0]
-                .substr(
-                  savedTxtInField
-                    .split(obrazanayaSrokaPoSimwoly)[0]
-                    .lastIndexOf(' ') + 1
-                )
-              let needWords =
-                needWordPart + savedTxtInField.slice(CounerForRmSymbolsStr)
-              console.log(needWords)
-
-              this.setForSetterOnly(needWords)
-              this.setForWriter()
-              // мечаем что мы тут были
-              localStorage.setItem(
-                'textHeigthForDetectNewLine__numberCounterStartingThirdLine',
-                '1'
-              )
             } else if (
               raznica > lineHeigthAndPOGRESHNOST &&
               countLocalStorage2 == '0'
@@ -594,7 +590,12 @@ export class Chating {
     // ГЛАВНОЕ УСЛОВИЕ
     if (a < text.length) {
       // УСЛОВИЕ НА ПРОДОЛЖЕНИЕ
-      await this.chatinUserAnimation(++a, text, timeTimeout, delay)
+
+      if (checkCurrentMessageAsUsed(dialogs, i_forTimer) ) {
+        timeTimeout = 0
+      }
+
+      await this.chatinUserAnimation(++a, text, timeTimeout, delay, dialogs, i_forTimer)
     }
   }
 
@@ -627,10 +628,34 @@ export class Chating {
     const vm = this
     // eslint-disable-next-line no-async-promise-executor
     return new Promise(async (resolve, reject) => {
+
+      
+
+      // console.log('!checkCurrentMessageAsUsed(dialogs, i_forTimer)', !checkCurrentMessageAsUsed(dialogs, i_forTimer))
+      // console.log('delay timeoutBeforeSendMessage', {
+      //   timeoutBeforeSendMessage: timeoutBeforeSendMessage,
+      //   delay: delay
+      // })
+
+
       // ГЛАВНОЕ УСЛОВИЕ
       if (a >= text.length) {
+
+        let timeoutBeforeSendMessage = 100
+
+        if (!checkCurrentMessageAsUsed(dialogs, i_forTimer)) {
+          if(localStorage.getItem('web_first_part_user_msg') ) {
+            localStorage.removeItem('web_first_part_user_msg')
+            // markCurrentMessageAsUsed(dialogs, i_forTimer)
+          }
+          localStorage.setItem('web_first_part_user_msg', 'true')
+        } else {
+          timeoutBeforeSendMessage = 0
+          delay = 0
+        }
+
         // ЗАПОЛНИЛИ ЛИ МЫ ПОЛЕ? - ДА
-        await timeout(100)
+        await timeout(timeoutBeforeSendMessage)
         timeTimeout = delay // задережка в показе сообщения(приложение думает)
         var text_dialog
         if (typeof dialogs[i_forTimer].text === 'object') {
@@ -647,16 +672,30 @@ export class Chating {
           icon_src = dialogs[i_forTimer].icon, // icon src
           time = dialogs[i_forTimer].time,
           options = dialogs[i_forTimer].options
-
+        // debugger
         new Chating().buildMessage(
           from,
           text_dialog,
           time,
           options,
+          delay,
+          dialogs,
+          i_forTimer
         )
       } else {
+
+        let timeoutBeforeSendMessage = 100
+
+        if (!checkCurrentMessageAsUsed(dialogs, i_forTimer) ) {
+          // markCurrentMessageAsUsed(dialogs, i_forTimer)
+        } else {
+          timeoutBeforeSendMessage = 0
+          delay = 0
+        }
+
         // ЗАПОЛНИЛИ ЛИ МЫ ПОЛЕ - НЕТ
-        await vm.chatinUserAnimation(a, text, timeTimeout, delay)
+        await vm.chatinUserAnimation(a, text, timeTimeout, delay, dialogs, i_forTimer)
+        console.log('before preBuildMessageUser')
         await vm.preBuildMessageUser(
           (a = text.length),
           text,
@@ -697,6 +736,21 @@ export class Chating {
         window.timerHub.setTimeout('preBuildMessageApp', resolve, ms)
       )
 
+    // if (!checkCurrentMessageAsUsed(dialogs, i_forTimer) ) {
+    //   markCurrentMessageAsUsed(dialogs, i_forTimer)
+    // } else {
+    //   delay = 0
+    // }
+    if (!checkCurrentMessageAsUsed(dialogs, i_forTimer)) {
+      if(localStorage.getItem('web_first_part_app_msg') ) {
+        localStorage.removeItem('web_first_part_app_msg')
+        // markCurrentMessageAsUsed(dialogs, i_forTimer)
+      }
+      localStorage.setItem('web_first_part_app_msg', 'true')
+    } else {
+      delay = 0
+    }
+      
     timeTimeout = delay
     await timeout(timeTimeout)
 
@@ -711,6 +765,9 @@ export class Chating {
       text_dialog,
       time,
       options,
+      delay,
+      dialogs,
+      i_forTimer
     )
 
     return
@@ -746,6 +803,16 @@ export class Chating {
             document.getElementById('chatContent')
           )
         }
+
+        // если мы трансформаровались с другой анимации, то скрываем поле ввода, на момент проктурки всех сообщений
+        if (checkCurrentMessageAsUsed(dialogs, i_forTimer)) {
+          document.querySelector('#getter').style.display = 'none'
+        } else {
+          document.querySelector('#getter').style.display = 'flex';
+        }
+
+
+
         // ТЕЛО
         console.log('turn no. ' + i_forTimer)
         var text = null
@@ -766,6 +833,7 @@ export class Chating {
 
         let who = dialogs[i_forTimer].from
         if (who === 'user') {
+          console.log('before preBuildMessageUser2')
           await vm.preBuildMessageUser(
             a,
             text,

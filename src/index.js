@@ -109,6 +109,10 @@ require('./styles/stylus/main.styl')
         // ставим слушателя на уничтожение
         await this.destroyChatClickListenerWebAnim(elementID)
 
+        if (!localStorage.getItem('currentAnimationDialog')) {
+          localStorage.setItem('currentAnimationDialog', JSON.stringify(this.dialogs))
+        }
+
         await new Chating().CreateAnimationChating(this.dialogs)
       })
     }
