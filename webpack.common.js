@@ -83,7 +83,7 @@ module.exports = {
 				use: 'file-loader',
 			},
 			{
-				test: /\.(png|jpe?g|gif|webp)$/,
+				test: /\.(png|jpeg|jpg|gif|webp)$/,
 				type: 'asset',
 			},
 			{
