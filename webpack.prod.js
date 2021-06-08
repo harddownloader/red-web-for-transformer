@@ -13,7 +13,7 @@ module.exports = merge(common, {
 	devtool: 'source-map',
 	plugins: [
 		new ImageMinimizerPlugin({
-			test: /\.(png|jpe?g|gif)$/,
+			test: /\.(png|jpe?g|jpg|gif)$/,
 			severityError: 'warning', // Ignore errors on corrupted images
 			deleteOriginalAssets: true,
 			minimizerOptions: {
