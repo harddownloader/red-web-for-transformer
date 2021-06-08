@@ -1,3 +1,7 @@
+// babel
+import 'core-js';
+import 'regenerator-runtime/runtime';
+// app
 import { Chating } from './app/Chating' // на постройку механики обмена сообщениями
 import { getWebHtml } from './app/createHTML'
 

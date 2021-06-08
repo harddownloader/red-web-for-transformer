@@ -3,7 +3,7 @@
 import { ConvertTools } from './core.js'
 // import { multi } from '../lib/multipleClasses'
 import configJS from './config'
-import { htmlWebAdminAnimation } from './createHTML'
+import { getWebHtml } from './createHTML'
 
 /**
  * класс для сборки макета анимации,
@@ -138,6 +138,6 @@ export class BuildPhone {
    * создаем html скелет для нашего приложения
    */
   initHTML() {
-    document.querySelector('.container_main').innerHTML = htmlWebAdminAnimation
+    document.querySelector('.container_main').innerHTML = getWebHtml
   }
 }

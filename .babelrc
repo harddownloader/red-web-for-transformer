@@ -1,0 +1,17 @@
+{
+	"presets": [
+		// https://karen-kua.medium.com/the-end-of-babel-polyfill-the-more-efficient-alternative-95f959fef9c2
+    ["@babel/preset-env", {
+			"useBuiltIns": "usage",
+			"corejs": 3.6
+	 	}],
+  ],
+	"plugins": [
+		[
+			"@babel/plugin-transform-runtime",
+			{
+				"regenerator": true
+			}
+		]
+	]
+}

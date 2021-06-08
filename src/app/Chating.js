@@ -324,7 +324,7 @@ export class Chating {
           window.timerHub.setTimeout('preBuildMessageApp', resolve, ms)
         )
 
-      console.log('AnimationScrollInRecursion - delayScroll', delayScroll)
+      // console.log('AnimationScrollInRecursion - delayScroll', delayScroll)
 
       let pxToScrollTop = 5
       if (delayScroll !== 0) {
