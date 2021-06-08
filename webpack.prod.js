@@ -63,7 +63,7 @@ module.exports = merge(common, {
 	// },
 	plugins: [
 		new ImageMinimizerPlugin({
-			test: /\.(png|jpeg|jpg|gif)$/,
+			test: /\.(jpe?g\|png\|gif\|tif\|webp\|svg\|avif)\$/i,
 			severityError: 'warning', // Ignore errors on corrupted images
 			deleteOriginalAssets: true,
 			// filename: '[path][name].webp',
@@ -107,7 +107,7 @@ module.exports = merge(common, {
             loader: MiniCssExtractPlugin.loader,
             options: {
 							esModule: false,
-							publicPath: '/dist',
+							// publicPath: '/dist',
 							// modules: {
               //   namedExport: true,
               // },
