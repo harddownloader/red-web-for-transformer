@@ -60,7 +60,6 @@ module.exports = merge(common, {
 						},
           },
           { loader: 'css-loader' },
-          // {loader: 'stylus-loader'},
           {
             loader: 'stylus-loader', // compiles Stylus to CSS
             options: {
