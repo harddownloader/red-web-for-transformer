@@ -26,8 +26,12 @@ module.exports = {
 		new webpack.DefinePlugin({
 			'process.env': JSON.stringify(dotenv.config().parsed), // it will automatically pick up key values from .env file
 		}),
+		// new MiniCssExtractPlugin(),
 		new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.pug'),
+			// filename: 'index.html',
+			// template: './public/index.html',
+			// favicon: './public/favicon.ico',
 		}),
 		new CopyPlugin({
       patterns: [
@@ -79,7 +83,7 @@ module.exports = {
 				use: 'file-loader',
 			},
 			{
-				test: /\.(png|jpe?g|jpg|gif|webp)$/,
+				test: /\.(png|jpe?g|gif|webp)$/,
 				type: 'asset',
 			},
 			{
@@ -93,6 +97,7 @@ module.exports = {
 			{
 				test: /\.svg$/,
 				loader: 'url-loader',
+        // include: path.join(__dirname, ''),
         options: {
           publicPath: './',
           limit: 10000,
