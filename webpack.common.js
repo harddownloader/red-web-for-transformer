@@ -2,7 +2,6 @@ const path = require('path')
 const webpack = require('webpack')
 const dotenv = require('dotenv')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 
 
@@ -26,12 +25,8 @@ module.exports = {
 		new webpack.DefinePlugin({
 			'process.env': JSON.stringify(dotenv.config().parsed), // it will automatically pick up key values from .env file
 		}),
-		// new MiniCssExtractPlugin(),
 		new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.pug'),
-			// filename: 'index.html',
-			// template: './public/index.html',
-			// favicon: './public/favicon.ico',
 		}),
 		new CopyPlugin({
       patterns: [
@@ -97,7 +92,6 @@ module.exports = {
 			{
 				test: /\.svg$/,
 				loader: 'url-loader',
-        // include: path.join(__dirname, ''),
         options: {
           publicPath: './',
           limit: 10000,
