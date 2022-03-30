@@ -15,7 +15,7 @@ export function HasClass(el, className) {
  * @param {*} className 
  */
 export function AddClass(el, className) {
-  console.log('add class', {el: el, className: className})
+  // console.log('add class', {el: el, className: className})
   if (el.classList) el.classList.add(className)
   else if (!HasClass(el, className)) el.className += ' ' + className
 }

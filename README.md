@@ -1,1 +1,1 @@
-# VK Assistent blue laptop(web)
+# VK Assistant blue laptop(web)

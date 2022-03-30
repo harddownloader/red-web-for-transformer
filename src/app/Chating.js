@@ -55,7 +55,7 @@ export class Chating {
       // is app
       AppIcon =
         '<div class="item">\n' +
-        '<div class="chat-icon"><img width="30" src="chats/assets/img/logo.png"></div>\n' +
+        '<div class="chat-icon"><img width="30" src="chats/assets/img/LogoKubSvg28x28.svg"></div>\n' +
         '</div>'
     } else if (typeSet == 'company') {
       // is user
@@ -63,9 +63,9 @@ export class Chating {
         '<div class="item">\n' +
         '<div class="chat-icon">\n' +
           '<picture>\n' +
-          '<source srcset="chats/assets/img/userAvatar2_red.webp" type="image/webp">\n' +
-          '<source srcset="chats/assets/img/userAvatar2_red.png" type="image/png"> \n' +
-          '<img src="chats/assets/img/userAvatar2_red.png" width="25px">\n' +
+          '<source srcset="chats/assets/img/userAvatar2_blue.webp" type="image/webp">\n' +
+          '<source srcset="chats/assets/img/userAvatar2_blue.png" type="image/png"> \n' +
+          '<img src="chats/assets/img/userAvatar2_blue.png" width="25px">\n' +
         '</picture>\n' +
         '</div>\n' +
         '</div>'
