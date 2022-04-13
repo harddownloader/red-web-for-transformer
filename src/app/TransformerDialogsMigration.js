@@ -28,9 +28,6 @@ export function markCurrentMessageAsUsed (dialogs, i_forTimer) {
       }
     }
     
-    
-    
-    
     return false
   }
 }
@@ -40,9 +37,6 @@ export function checkCurrentMessageAsUsed (dialogs, i_forTimer) {
   if (localStorage.getItem('currentAnimationDialog')) {
     const lsDialogsWithoutFormating = localStorage.getItem('currentAnimationDialog')
     const lsDialogs = JSON.parse(lsDialogsWithoutFormating)
-    // if(lsDialogs[i_forTimer].text != dialogs[i_forTimer].text) {
-    //   // alert(0)
-    // }
 
     if (
       typeof lsDialogs[i_forTimer].text === 'object' &&

@@ -1,4 +1,3 @@
-// @//ts-check
 // import { Conventor, TimeControl, ConvertTools } from './core.js'
 import { ConvertTools } from './core.js'
 // import { multi } from '../lib/multipleClasses'
@@ -12,7 +11,6 @@ import { getWebHtml } from './createHTML'
  */
 export class BuildPhone {
   constructor(argsForBuilder) {
-    // super()
     this.argsForBuilder = argsForBuilder
     this.height = this.getHW().height // wrapper_phone
     this.width = this.getHW().width // wrapper_phone
@@ -105,15 +103,15 @@ export class BuildPhone {
    * высчитывает и отдает высоту и ширину анимации
    */
   getHW() {
-    var windowHeight = window.innerHeight
+    let windowHeight = window.innerHeight
 
     if (windowHeight < 400) {
       windowHeight = 400
     }
 
-    var tallage = 100 - configJS['marginsSumTopBottomInPercentsWindowAnimation'] // 100% - 10%(отступы по 5%) = 90%
-    var heightPhone = (windowHeight / 100) * tallage // вычисление процентов
-    var widthPhone = heightPhone / 2.04999
+    const tallage = 100 - configJS['marginsSumTopBottomInPercentsWindowAnimation'] // 100% - 10%(отступы по 5%) = 90%
+    const heightPhone = (windowHeight / 100) * tallage // вычисление процентов
+    const widthPhone = heightPhone / 2.04999
 
     const parameters = {
       // тут самое главное это сохранение пропорций, НУЖНО написать код на пропорции - Ширина к Высоте

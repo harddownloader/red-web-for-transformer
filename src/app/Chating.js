@@ -289,7 +289,7 @@ export class Chating {
 
     let fadeInDuration = 1000
 
-    console.log('buildMessage - delay', delay)
+    // console.log('buildMessage - delay', delay)
     if(delay === 0) {
       fadeInDuration = 0
     }
@@ -356,7 +356,7 @@ export class Chating {
         // true - значит при нашем движении курсор уперся, значит это конечная точка
         // значит пока его переть дальше
         // clearTimeout(id);
-        console.log('first')
+        // console.log('first')
         return
       } else if (i > 50 && isShowScroll === false) {
         // завершаем если скролла еще нет, чтобы он не разгонялся на ровном месте
@@ -375,7 +375,7 @@ export class Chating {
       if (checkCurrentMessageAsUsed(dialogs, i_forTimer) ) {
         delayScroll = 0
       }
-      console.log('delayScroll', delayScroll)
+      // console.log('delayScroll', delayScroll)
 
       AnimationScrollInRecursion(0, delayScroll)
     }
